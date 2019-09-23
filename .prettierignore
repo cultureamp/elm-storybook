@@ -1,0 +1,11 @@
+*
+
+# Whitelist...
+!**/
+!*.ts
+!*.tsx
+!*.json
+
+# Explicitly ignore...
+**/node_modules/
+**/elm-stuff/

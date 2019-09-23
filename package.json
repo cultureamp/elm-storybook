@@ -1,0 +1,16 @@
+{
+  "name": "@cultureamp/elm-storybook",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "lint": "tsc && tslint -p ."
+  },
+  "devDependencies": {
+    "prettier": "^1.18.2",
+    "tslint": "^5.20.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.0.1",
+    "typescript": "^3.6.3",
+    "typescript-tslint-plugin": "^0.5.4"
+  }
+}
