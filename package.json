@@ -2,11 +2,23 @@
   "name": "@cultureamp/elm-storybook",
   "version": "0.1.0",
   "private": true,
+  "main": "src",
   "scripts": {
     "lint": "tsc && tslint -p ."
   },
+  "dependencies": {
+    "react-elm-components": "^1.1.0"
+  },
+  "peerDependencies": {
+    "@storybook/react": "^4.1.1",
+    "react": "^16.8.6"
+  },
   "devDependencies": {
+    "@storybook/react": "^5.2.1",
+    "@types/node": "^12.7.5",
+    "@types/react": "^16.9.2",
     "prettier": "^1.18.2",
+    "react": "^16.9.0",
     "tslint": "^5.20.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-plugin-prettier": "^2.0.1",
