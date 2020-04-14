@@ -10,6 +10,7 @@ Load a `*.elm` file that uses ElmStorybook, adding the stories to react-storyboo
 @param module Use the value `module`. This is required for Hot Module Reloading. eg. `module`
 @param elmApp The Elm file you wish to import. eg. `require('./TextStores.elm')`
 @param storyNames An array of stories to add to this collection. These names must match those defined in the Elm Storybook. eg. `['h1', 'h2', 'h3']`
+@param ports The javascript functions an Elm program may send and subscribe to via ports
 
 ```js
 import { loadElmStories } from "@cultureamp/elm-storybook"
@@ -25,15 +26,19 @@ export const loadElmStories = (
   name: string,
   module: NodeModule,
   elmApp: { Elm: { Main: any } },
-  storyNames: string[]
+  storyNames: string[],
+  ports: (ports: unknown) => void | null
 ) => {
   if (!elmApp.Elm.Main) {
     throw new Error("Elm storybook module did not exist with name `Main`")
   }
   const stories = storiesOf(name, module)
   for (const storyName of storyNames) {
-    stories.add(storyName, () => (
-      <ElmComponent src={elmApp.Elm.Main} flags={storyName} />
-    ))
+    stories.add(storyName, () => {
+      if (ports) {
+        return <ElmComponent src={elmApp.Elm.Main} flags={storyName} ports={ports} />
+      }
+      return <ElmComponent src={elmApp.Elm.Main} flags={storyName} />
+    })
   }
 }
