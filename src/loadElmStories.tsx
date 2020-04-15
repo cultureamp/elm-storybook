@@ -27,7 +27,7 @@ export const loadElmStories = (
   module: NodeModule,
   elmApp: { Elm: { Main: any } },
   storyNames: string[],
-  ports: (ports: unknown) => void | null
+  ports?: (ports: unknown) => void | null
 ) => {
   if (!elmApp.Elm.Main) {
     throw new Error("Elm storybook module did not exist with name `Main`")
