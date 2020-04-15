@@ -40,8 +40,8 @@ export const loadElmStories = (
   }
   const stories = storiesOf(name, module)
   for (const storyName of storyNames) {
-    stories.add(storyName, () => 
+    stories.add(storyName, () => (
       <ElmComponent src={elmApp.Elm.Main} flags={storyName} ports={ports} />
-    )
+    ))
   }
 }
