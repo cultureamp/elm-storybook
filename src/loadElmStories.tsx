@@ -22,12 +22,18 @@ loadElmStories("Text (Elm)", module, require("./TextStories.elm"), [
 ])
 ```
 */
+interface Ports {
+  [key: string]: {
+    subscribe: () => void,
+    send: () => void
+  }
+}
 export const loadElmStories = (
   name: string,
   module: NodeModule,
   elmApp: { Elm: { Main: any } },
   storyNames: string[],
-  ports?: (ports: unknown) => void | null
+  ports?: (ports: Ports) => void
 ) => {
   if (!elmApp.Elm.Main) {
     throw new Error("Elm storybook module did not exist with name `Main`")
