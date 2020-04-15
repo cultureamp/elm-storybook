@@ -35,10 +35,7 @@ export const loadElmStories = (
   const stories = storiesOf(name, module)
   for (const storyName of storyNames) {
     stories.add(storyName, () => {
-      if (ports) {
-        return <ElmComponent src={elmApp.Elm.Main} flags={storyName} ports={ports} />
-      }
-      return <ElmComponent src={elmApp.Elm.Main} flags={storyName} />
+      return <ElmComponent src={elmApp.Elm.Main} flags={storyName} ports={ports} />
     })
   }
 }
