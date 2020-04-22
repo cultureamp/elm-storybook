@@ -1,7 +1,6 @@
 {
-  "name": "@cultureamp/elm-storybook",
-  "version": "0.2.0",
-  "private": true,
+  "name": "elm-storybook",
+  "version": "0.2.1",
   "main": "src",
   "scripts": {
     "lint": "tsc && tslint -p ."
