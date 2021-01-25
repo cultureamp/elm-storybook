@@ -24,24 +24,21 @@ loadElmStories("Text (Elm)", module, require("./TextStories.elm"), [
 */
 interface Ports {
   [key: string]: {
-    subscribe: () => void,
+    subscribe: () => void
     send: () => void
   }
 }
 export const loadElmStories = (
   name: string,
   module: NodeModule,
-  elmApp: { Elm: { Main: any } },
+  elmApp: any,
   storyNames: string[],
   ports?: (ports: Ports) => void
 ) => {
-  if (!elmApp.Elm.Main) {
-    throw new Error("Elm storybook module did not exist with name `Main`")
-  }
   const stories = storiesOf(name, module)
   for (const storyName of storyNames) {
     stories.add(storyName, () => (
-      <ElmComponent src={elmApp.Elm.Main} flags={storyName} ports={ports} />
+      <ElmComponent src={elmApp} flags={storyName} ports={ports} />
     ))
   }
 }
