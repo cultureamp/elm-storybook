@@ -1,10 +1,10 @@
 {
   "name": "elm-storybook",
-  "version": "0.2.1",
+  "version": "0.4.0",
+  "private": true,
+  "type": "module",
   "main": "src",
-  "scripts": {
-    "lint": "tsc && tslint -p ."
-  },
+  "scripts": {},
   "dependencies": {
     "react-elm-components": "^1.1.0"
   },
@@ -17,11 +17,6 @@
     "@types/node": "^12.7.5",
     "@types/react": "^16.9.2",
     "prettier": "^1.18.2",
-    "react": "^16.9.0",
-    "tslint": "^5.20.0",
-    "tslint-config-prettier": "^1.18.0",
-    "tslint-plugin-prettier": "^2.0.1",
-    "typescript": "^3.6.3",
-    "typescript-tslint-plugin": "^0.5.4"
+    "react": "^16.9.0"
   }
 }
