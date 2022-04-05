@@ -1,0 +1,17 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: elm-storybook
+  description: >
+    Experimental Elm/Storybook tooling
+  tags:
+    - users-na
+    - camp-foundations
+    - data-none
+  annotations:
+    github.com/project-slug: cultureamp/elm-storybook
+    github.com/team-slug: cultureamp/front-end-foundations
+spec:
+  type: library
+  owner: front-end-foundations
+  lifecycle: production
