@@ -91,9 +91,7 @@ storybook stories =
         storybookView model =
             case ( model.currentStory, model.customModel ) of
                 ( Just currentStory, Just customModel ) ->
-                    div [ style "width" "100vw", style "display" "flex", style "justify-content" "center" ]
-                        [ currentStory.view customModel
-                        ]
+                    currentStory.view customModel
 
                 ( _, _ ) ->
                     text ("Story " ++ model.currentStoryName ++ " not found")
